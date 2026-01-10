@@ -1,133 +1,149 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const navbar = document.getElementById('navbar');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links li a');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-
-    // Navbar Scroll Effect
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        // Active Link Highlighting (ScrollSpy)
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 150)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Mobile Menu Toggle
+    // Mobile menu, backdrop, scroll animations, smooth anchors, form handling
+    
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
-    const body = document.body;
-
-    const toggleMenu = () => {
-        hamburger.classList.toggle('open');
-        mobileMenu.classList.toggle('active');
-        // Prevent background scrolling when menu is open
-        body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-        navbar.classList.toggle('mobile-activator');
-    };
-
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMenu);
+    const navLinks = document.querySelectorAll('nav ul.nav-links a');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+    
+    // ensure backdrop element
+    let backdrop = document.querySelector('.menu-backdrop');
+    if (!backdrop) {
+    	backdrop = document.createElement('div');
+    	backdrop.className = 'menu-backdrop';
+    	document.body.appendChild(backdrop);
     }
-
-    // Close mobile menu when a link is clicked
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
+    
+    // ensure close button inside menu
+    function ensureCloseBtn(){
+    	if (!mobileMenu) return;
+    	if (!mobileMenu.querySelector('.mobile-close-btn')){
+    		const btn = document.createElement('button');
+    		btn.type = 'button';
+    		btn.className = 'mobile-close-btn';
+    		btn.innerHTML = '×';
+    		btn.setAttribute('aria-label','Close menu');
+    		mobileMenu.insertBefore(btn, mobileMenu.firstChild);
+    		btn.addEventListener('click', closeMenu);
+    	}
+    }
+    ensureCloseBtn();
+    
+    function openMenu(){
+    	if (!mobileMenu) return;
+    	mobileMenu.classList.add('active');
+    	backdrop.classList.add('active');
+    	hamburger?.classList.add('active');
+    	document.documentElement.style.overflow = 'hidden';
+    	document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu(){
+    	if (!mobileMenu) return;
+    	mobileMenu.classList.remove('active');
+    	backdrop.classList.remove('active');
+    	hamburger?.classList.remove('active');
+    	document.documentElement.style.overflow = '';
+    	document.body.style.overflow = '';
+    }
+    
+    // hamburger toggle
+    hamburger?.addEventListener('click', (e)=>{
+    	e.stopPropagation();
+    	mobileMenu?.classList.contains('active') ? closeMenu() : openMenu();
     });
-
-    // Scroll Reveal Animations
-    const fadeElements = document.querySelectorAll('.fade-on-scroll, .fade-up');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => {
-        observer.observe(el);
+    
+    // close when clicking backdrop or outside
+    backdrop?.addEventListener('click', closeMenu);
+    document.addEventListener('click', (e)=>{
+    	if (!mobileMenu?.contains(e.target) && !hamburger?.contains(e.target) && mobileMenu?.classList.contains('active')){
+    		closeMenu();
+    	}
     });
-
-    // Smooth Scrolling with Offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 70; // Matches .scrolled height
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
-        });
+    
+    // close with Esc
+    document.addEventListener('keydown', (e)=>{
+    	if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) closeMenu();
     });
-
-    // Form Handling
+    
+    // mobile links: smooth scroll then close
+    mobileLinks.forEach(a=>{
+    	a.addEventListener('click', (ev)=>{
+    		ev.preventDefault();
+    		const href = a.getAttribute('href');
+    		closeMenu();
+    		if (href && href.startsWith('#')){
+    			setTimeout(()=> {
+    				const el = document.querySelector(href);
+    				if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    			}, 320);
+    		}
+    	});
+    });
+    
+    // desktop nav links smooth scroll
+    navLinks.forEach(a=>{
+    	a.addEventListener('click', (ev)=>{
+    		const href = a.getAttribute('href');
+    		if (href && href.startsWith('#') && document.querySelector(href)){
+    			ev.preventDefault();
+    			document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+    		}
+    	});
+    });
+    
+    // IntersectionObserver for fade-on-scroll
+    const io = new IntersectionObserver((entries, obs)=>{
+    	entries.forEach(entry=>{
+    		if (entry.isIntersecting){
+    			entry.target.classList.add('visible');
+    			obs.unobserve(entry.target);
+    		}
+    	});
+    }, {threshold:0.15, rootMargin:'0px 0px -80px 0px'});
+    
+    document.querySelectorAll('.fade-on-scroll, .highlight-card, .about-image-wrapper, .section-header').forEach(el=>{
+    	io.observe(el);
+    });
+    
+    // navbar scroll effect (add scrolled class)
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', ()=>{
+    	if (window.pageYOffset > 40) navbar?.classList.add('scrolled'); else navbar?.classList.remove('scrolled');
+    });
+    
+    // contact form handling
     const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
-
-            btn.innerText = 'Sending...';
-            btn.style.opacity = '0.7';
-            btn.disabled = true;
-
-            // Simulate API interaction
-            setTimeout(() => {
-                alert('Thank you! We have received your interest. Our team will get back to you shortly.');
-                contactForm.reset();
-                btn.innerText = 'Sent Successfully';
-                btn.style.backgroundColor = '#27ae60'; // Success Green
-                btn.style.opacity = '1';
-
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.backgroundColor = ''; // Revert to default
-                }, 4000);
-            }, 1500);
-        });
+    if (contactForm){
+    	contactForm.addEventListener('submit', (e)=>{
+    		e.preventDefault();
+    		const name = (document.getElementById('name')?.value || '').trim();
+    		const email = (document.getElementById('email')?.value || '').trim();
+    		if (!name || !email){ alert('Please fill required fields.'); return; }
+    		// placeholder success behavior
+    		alert(`Thanks ${name}! We'll reach out at ${email}.`);
+    		contactForm.reset();
+    	});
     }
+    
+    // ensure mobile-menu element exists (if not, create a simple container)
+    if (!mobileMenu){
+    	const mm = document.createElement('div');
+    	mm.id = 'mobile-menu';
+    	mm.className = '';
+    	const links = document.createElement('div');
+    	links.className = 'mobile-nav-links';
+    	['#home','#about','#highlights','#location','#contact'].forEach(h=>{
+    		const a = document.createElement('a'); a.href = h; a.textContent = document.querySelector(`a[href="${h}"]`)?.textContent || h.replace('#','');
+    		links.appendChild(a);
+    	});
+    	mm.appendChild(links);
+    	document.body.appendChild(mm);
+    	ensureCloseBtn();
+    }
+    
+    // ===== PAGE LOAD =====
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('Shapoorji Navante - Website Loaded Successfully');
+    });
 });
