@@ -1030,3 +1030,19 @@ footer p {
         border-radius: 0;
     }
 }
+#mobile-menu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#mobile-menu.active::before {
+    opacity: 1;
+}
