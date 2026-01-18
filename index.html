@@ -5,32 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Shapoorji Navante - A New Landmark of refined living by Shapoorji Pallonji Group. Coming Soon.">
-    <title>Shapoorji Navante | Coming Soon</title>
+        content="An Iconic Address in the Heart of Santacruz - Shapoorji 9 Arcs by Shapoorji Pallonji.">
+    <title>Shapoorji 9 Arcs – Santacruz | Luxury Residences</title>
 
-    <!-- Google Fonts: Outfit and Playfair Display -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
 
     <!-- Navbar -->
     <header id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Shapoorji Navante</a>
+            <a href="#" class="logo">Shapoorji 9 Arcs</a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#highlights">Highlights</a></li>
-                    <li><a href="#location">Location</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">Overview</a></li>
+                    <li><a href="#residences">Residences</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#why-choose">Why Choose</a></li>
+                    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -41,119 +53,562 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu">
+        <button class="mobile-close-btn">&times;</button>
         <div class="mobile-nav-links">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#highlights">Highlights</a>
-            <a href="#location">Location</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Overview</a>
+            <a href="#residences">Residences</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#why-choose">Why Choose</a>
+            <a href="#contact" class="mobile-cta">Enquire Now</a>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg-wrapper">
+            <img src="images/image 1.jfif" alt="Shapoorji 9 Arcs Luxury Tower" class="hero-img">
             <div class="overlay"></div>
-            <img src="images/image 1.jfif" alt="Shapoorji Navante Exterior" class="hero-img">
+            <div class="floating-elements">
+                <div class="float-element el-1">🏆 150+ Years Legacy</div>
+                <div class="float-element el-2">📍 Prime Santacruz</div>
+                <div class="float-element el-3">✨ Luxury Living</div>
+            </div>
         </div>
         <div class="container hero-content">
-            <div class="coming-soon-badge">Coming Soon</div>
-            <h1 class="fade-up">A New Landmark of <span class="text-white">Refined Living</span></h1>
-            <p class="subtitle fade-up delay-1">Experience thoughtfully designed residences by Shapoorji Pallonji Group.
-            </p>
+            <div class="coming-soon-badge pulse-animation">Launching Soon</div>
+            <h1 class="fade-up">Shapoorji <span class="text-gradient">9 Arcs</span></h1>
+            <p class="subtitle fade-up delay-1">An Iconic Address in the Heart of Santacruz</p>
             <div class="hero-description fade-up delay-2">
-                <p>Premium Lifestyle &nbsp;|&nbsp; Strategic Location &nbsp;|&nbsp; Trusted Developer</p>
+                <p>A sophisticated residential landmark by Shapoorji Pallonji, designed for those who seek space,
+                    elegance, and seamless connectivity in Mumbai's most prestigious neighborhood.</p>
             </div>
-            <a href="#contact" class="btn btn-primary fade-up delay-3">Register Your Interest</a>
+            <div class="hero-cta fade-up delay-3">
+                <a href="#contact" class="btn btn-primary open-modal">
+                    <i class="fas fa-calendar-check"></i> Book Exclusive Site Visit
+                </a>
+                <a href="#" class="btn btn-outline open-modal">
+                    <i class="fas fa-download"></i> Download Brochure
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section bg-alt">
-        <div class="container about-container">
-            <div class="about-image-wrapper fade-on-scroll">
-                <img src="assets/about_img.png" alt="Luxury Interior" class="about-img">
-                <div class="img-badge">Coming Soon</div>
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2>Project <span class="text-gradient">Overview</span></h2>
+                <div class="decorative-line"></div>
+                <p>Discover the epitome of luxury living in Santacruz</p>
             </div>
-            <div class="about-text-content fade-on-scroll">
-                <div class="section-header text-left">
-                    <h2>About Shapoorji Navante</h2>
-                    <div class="divider align-left"></div>
+            <div class="about-container">
+                <div class="about-image-wrapper scroll-reveal">
+                    <img src="images/valet-parking.png" alt="Luxury Building Architecture" class="about-img">
+                    <div class="img-badge">
+                        <i class="fas fa-award"></i> Premium Project
+                    </div>
+                    <div class="image-overlay">
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <h3>14+</h3>
+                                <p>Storeys</p>
+                            </div>
+                            <div class="stat">
+                                <h3>3</h3>
+                                <p>Residential Wings</p>
+                            </div>
+                            <div class="stat">
+                                <h3>4</h3>
+                                <p>Basement Levels</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="lead-text">Where modern architecture meets timeless elegance.</p>
-                <p>Shapoorji Navante is an upcoming residential development designed to offer a harmonious blend of
-                    comfort and long-term value. Crafted for urban families and professionals, the project reflects
-                    thoughtful planning, quality construction, and a lifestyle driven by convenience.</p>
-                <ul class="about-features">
-                    <li>Thoughtful Design</li>
-                    <li>Premium Finishes</li>
-                    <li>Sustainable Living</li>
-                </ul>
+                <div class="about-text-content scroll-reveal">
+                    <h3>Redefining Luxury Living</h3>
+                    <p class="lead-text">Experience unparalleled elegance with Shapoorji's legacy of 150+ years, now in
+                        the heart of Santacruz.</p>
+
+                    <div class="features-grid">
+                        <div class="feature">
+                            <i class="fas fa-parking"></i>
+                            <h4>4-Level Basement Parking</h4>
+                            <p>Dedicated parking for every apartment</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-building"></i>
+                            <h4>14 Storeys + Terrace</h4>
+                            <p>Exclusive rooftop amenities</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-home"></i>
+                            <h4>3 Elegant Wings</h4>
+                            <p>A, B & C wing architecture</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sun"></i>
+                            <h4>All Homes with Balcony</h4>
+                            <p>Unobstructed views & ventilation</p>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-primary open-modal">
+                        <i class="fas fa-file-pdf"></i> Download Detailed PDF
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Highlights Section -->
-    <section id="highlights" class="section">
+    <!-- Residences Section -->
+    <section id="residences" class="section bg-alt">
         <div class="container">
-            <div class="section-header fade-on-scroll">
-                <h2>Project Highlights</h2>
-                <div class="divider"></div>
+            <div class="section-header scroll-reveal">
+                <h2>Luxury <span class="text-gradient">Residences</span></h2>
+                <div class="decorative-line"></div>
+                <p>Spacious homes designed for modern living</p>
             </div>
-            <div class="highlights-grid">
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">✨</div>
-                    <h3>Premium Living</h3>
-                    <p>Designed for inclusivity and luxury.</p>
+
+            <div class="residences-grid scroll-reveal">
+                <!-- 2 BHK Card -->
+                <div class="residence-card hover-glow">
+                    <div class="card-header">
+                        <h3>2 BHK Residences</h3>
+                        <span class="card-badge">Most Popular</span>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="sizes">
+                        <h4>Available Sizes:</h4>
+                        <ul>
+                            <li><span>680 sq.ft</span> Compact Elegance</li>
+                            <li><span>730 sq.ft</span> Smart Living</li>
+                            <li><span>770 sq.ft</span> Family Comfort</li>
+                            <li><span>829 sq.ft</span> Premium Space</li>
+                        </ul>
+                    </div>
+                    <div class="card-cta">
+                        <a href="#" class="btn btn-primary open-modal">View Floor Plans</a>
+                    </div>
                 </div>
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">🏡</div>
-                    <h3>Smart Layouts</h3>
-                    <p>Optimized for space and comfort.</p>
+
+                <!-- 3 BHK Card -->
+                <div class="residence-card hover-glow premium">
+                    <div class="card-header">
+                        <h3>3 BHK Residences</h3>
+                        <span class="card-badge">Premium</span>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="sizes">
+                        <h4>Available Sizes:</h4>
+                        <ul>
+                            <li><span>1090 sq.ft</span> Spacious Living</li>
+                            <li><span>1290 sq.ft</span> Luxury Space</li>
+                            <li><span>1340 sq.ft</span> Grand Residence</li>
+                        </ul>
+                    </div>
+                    <div class="card-cta">
+                        <a href="#" class="btn btn-primary open-modal">Check Availability</a>
+                    </div>
                 </div>
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">🏛️</div>
-                    <h3>Modern Architecture</h3>
-                    <p>Aesthetically pleasing design.</p>
+
+                <!-- Jodi Apartments -->
+                <div class="residence-card hover-glow exclusive">
+                    <div class="card-header">
+                        <h3>2 BHK Jodi Apartments</h3>
+                        <span class="card-badge">Exclusive</span>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fas fa-door-closed"></i>
+                    </div>
+                    <div class="sizes">
+                        <h4>Ultimate Luxury:</h4>
+                        <ul>
+                            <li><span>1650 sq.ft</span> Expansive Family Living</li>
+                            <li>Combined 2 BHK configuration</li>
+                            <li>Perfect for joint families</li>
+                            <li>Premium wing location</li>
+                        </ul>
+                    </div>
+                    <div class="card-cta">
+                        <a href="#" class="btn btn-primary open-modal">Exclusive Preview</a>
+                    </div>
                 </div>
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">🏊</div>
-                    <h3>Luxury Amenities</h3>
-                    <p>Wellness and leisure facilities.</p>
+            </div>
+
+            <div class="floor-planning scroll-reveal">
+                <h3>Thoughtful Floor Planning</h3>
+                <div class="planning-grid">
+                    <div class="plan image-card">
+                        <div class="plan-img-wrapper">
+                            <img src="images/image 1.jfif" alt="Wing A & B" class="plan-img">
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <h4>Wing A & B</h4>
+                            <p>3 Apartments per floor<br>Maximum privacy</p>
+                        </div>
+                    </div>
+                    <div class="plan image-card">
+                        <div class="plan-img-wrapper">
+                            <img src="images/image 1.jfif" alt="Wing C" class="plan-img">
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-icon">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                            <h4>Wing C</h4>
+                            <p>4 Apartments per floor<br>Optimal density</p>
+                        </div>
+                    </div>
+                    <div class="plan image-card">
+                        <div class="plan-img-wrapper">
+                            <img src="images/sky-gym.png" alt="Elevators" class="plan-img">
+                        </div>
+                        <div class="plan-content">
+                            <div class="plan-icon">
+                                <i class="fas fa-elevator"></i>
+                            </div>
+                            <h4>Elevators</h4>
+                            <p>2 High-speed elevators<br>per wing</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">🚆</div>
-                    <h3>Connectivity</h3>
-                    <p>Seamless access to city hubs.</p>
+                <a href="#" class="btn btn-primary open-modal">
+                    <i class="fas fa-print"></i> Download Floor Plans
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2>World-Class <span class="text-gradient">Amenities</span></h2>
+                <div class="decorative-line"></div>
+                <p>Experience luxury living at every level</p>
+            </div>
+
+            <!-- Amenities with Image -->
+            <div class="amenities-with-image scroll-reveal">
+
+
+                <div class="amenities-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="terrace">Terrace Lifestyle</button>
+                        <button class="tab-btn" data-tab="residential">Residential Amenities</button>
+                        <button class="tab-btn" data-tab="security">Security & Services</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <!-- Terrace Amenities -->
+                        <div class="tab-pane active" id="terrace">
+                            <div class="amenities-grid">
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/sky-gym.png" alt="Sky Gym" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <h4>Sky Gym</h4>
+                                        <p>State-of-the-art fitness center with panoramic views</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/infinity-pool.png" alt="Infinity Pool" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-swimming-pool"></i>
+                                        </div>
+                                        <h4>Infinity Pool</h4>
+                                        <p>Rooftop infinity swimming pool</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/luxury-spa.png" alt="Spa & Wellness" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-spa"></i>
+                                        </div>
+                                        <h4>Spa & Wellness</h4>
+                                        <p>Yoga deck and meditation spaces</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/sky-lounge.png" alt="Sky Lounge" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <h4>Sky Lounge</h4>
+                                        <p>Private party area with BBQ facilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Residential Amenities -->
+                        <div class="tab-pane" id="residential">
+                            <div class="amenities-grid">
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/home-office.png" alt="High-Speed Internet" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-wifi"></i>
+                                        </div>
+                                        <h4>High-Speed Internet</h4>
+                                        <p>Fiber optic connectivity</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/valet-parking.png" alt="Valet Parking" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-car"></i>
+                                        </div>
+                                        <h4>Valet Parking</h4>
+                                        <p>4-level basement parking</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/sky-lounge.png" alt="Smart Home" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <h4>Smart Home</h4>
+                                        <p>Automated security system</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/infinity-pool.png" alt="Water Systems" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <h4>Water Systems</h4>
+                                        <p>24x7 RO water supply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Amenities -->
+                        <div class="tab-pane" id="security">
+                            <div class="amenities-grid">
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/valet-parking.png" alt="CCTV Surveillance" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                        <h4>CCTV Surveillance</h4>
+                                        <p>24/7 security monitoring</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/home-office.png" alt="Biometric Access" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-fingerprint"></i>
+                                        </div>
+                                        <h4>Biometric Access</h4>
+                                        <p>Secure access control</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/image 1.jfif" alt="Trained Security" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-user-shield"></i>
+                                        </div>
+                                        <h4>Trained Security</h4>
+                                        <p>Round-the-clock security</p>
+                                    </div>
+                                </div>
+                                <div class="amenity-card image-card">
+                                    <div class="amenity-img-wrapper">
+                                        <img src="images/luxury-spa.png" alt="Emergency Response" class="amenity-img">
+                                    </div>
+                                    <div class="amenity-content">
+                                        <div class="amenity-icon-small">
+                                            <i class="fas fa-first-aid"></i>
+                                        </div>
+                                        <h4>Emergency Response</h4>
+                                        <p>Quick medical response</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="highlight-card fade-on-scroll">
-                    <div class="card-icon">🤝</div>
-                    <h3>Trusted Legacy</h3>
-                    <p>Quality construction you can trust.</p>
+            </div>
+
+            <div class="text-center scroll-reveal">
+                <a href="#contact" class="btn btn-primary open-modal">
+                    <i class="fas fa-images"></i> View All Amenities
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Section -->
+    <section id="why-choose" class="section bg-alt">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2>Why Choose <span class="text-gradient">Shapoorji 9 Arcs</span></h2>
+                <div class="decorative-line"></div>
+                <p>The perfect blend of legacy, location, and luxury</p>
+            </div>
+
+            <div class="why-choose-grid scroll-reveal">
+                <div class="reason-card">
+                    <div class="reason-number">01</div>
+                    <h4>Prime Santacruz Location</h4>
+                    <p>Heart of Mumbai's most prestigious neighborhood with excellent connectivity</p>
                 </div>
+                <div class="reason-card">
+                    <div class="reason-number">02</div>
+                    <h4>150+ Years Legacy</h4>
+                    <p>Trust of Shapoorji Pallonji Group - India's most trusted real estate brand</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">03</div>
+                    <h4>Superior Construction</h4>
+                    <p>Premium quality materials and world-class construction standards</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">04</div>
+                    <h4>High Appreciation</h4>
+                    <p>Proven track record of excellent capital appreciation in Santacruz</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">05</div>
+                    <h4>Rental Demand</h4>
+                    <p>Consistent high rental yields in premium Santacruz location</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">06</div>
+                    <h4>Limited Inventory</h4>
+                    <p>Only select premium apartments available in high-demand area</p>
+                </div>
+            </div>
+
+            <div class="urgency-box scroll-reveal">
+                <div class="urgency-content">
+                    <i class="fas fa-clock urgency-icon"></i>
+                    <div>
+                        <h3>Limited Inventory Available</h3>
+                        <p>Homes in Santacruz with such premium planning and amenities are rare. Book your exclusive
+                            preview today.</p>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary urgency-btn open-modal">
+                    <i class="fas fa-tags"></i> Exclusive Offer
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Location Section -->
-    <section id="location" class="section bg-alt">
+    <section id="location" class="section">
         <div class="container">
-            <div class="section-header fade-on-scroll">
-                <h2>Location Advantage</h2>
-                <div class="divider"></div>
+            <div class="section-header scroll-reveal">
+                <h2>Strategic <span class="text-gradient">Location</span></h2>
+                <div class="decorative-line"></div>
+                <p>Perfectly positioned for seamless connectivity</p>
             </div>
-            <div class="location-content fade-on-scroll">
-                <p>Shapoorji Navante enjoys excellent connectivity to key city hubs, business districts, educational
-                    institutions, healthcare centers, and lifestyle destinations.</p>
-                <div class="map-container">
-                    <!-- Embed Google Map Placeholder -->
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.792556557685!2d72.8776553149015!3d19.0728359870908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c87c2b0b0b0b%3A0x1234567890abcdef!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1625561000000!5m2!1sen!2sin"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade" title="Shapoorji Navante Location">
-                    </iframe>
+
+            <div class="location-container">
+                <div class="map-wrapper scroll-reveal">
+                    <div class="map-frame">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.458620248849!2d72.8397203149006!3d19.09374098707765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b0e35232cd%3A0x67c5e219438031d2!2sSantacruz%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1645521234567!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="connectivity-content scroll-reveal">
+                    <h3>At the Center of Everything</h3>
+                    <p class="location-desc">Located in the prime neighborhood of Santacruz West, Shapoorji 9 Arcs
+                        offers the perfect balance of tranquility and connectivity. Enjoy easy access to Mumbai's major
+                        business hubs, airports, and lifestyle destinations.</p>
+
+                    <div class="connectivity-grid">
+                        <div class="connect-item">
+                            <i class="fas fa-plane-departure"></i>
+                            <div class="connect-details">
+                                <h4>15 Mins</h4>
+                                <p>International Airport</p>
+                            </div>
+                        </div>
+                        <div class="connect-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div class="connect-details">
+                                <h4>20 Mins</h4>
+                                <p>BKC Business Hub</p>
+                            </div>
+                        </div>
+                        <div class="connect-item">
+                            <i class="fas fa-road"></i>
+                            <div class="connect-details">
+                                <h4>10 Mins</h4>
+                                <p>Western Express Hwy</p>
+                            </div>
+                        </div>
+                        <div class="connect-item">
+                            <i class="fas fa-water"></i>
+                            <div class="connect-details">
+                                <h4>15 Mins</h4>
+                                <p>Juhu Beach</p>
+                            </div>
+                        </div>
+                        <div class="connect-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <div class="connect-details">
+                                <h4>5 Mins</h4>
+                                <p>Linking Road</p>
+                            </div>
+                        </div>
+                        <div class="connect-item">
+                            <i class="fas fa-train"></i>
+                            <div class="connect-details">
+                                <h4>5 Mins</h4>
+                                <p>Santacruz Station</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,36 +616,141 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container contact-container">
-            <div class="section-header fade-on-scroll">
-                <h2>Get Updates</h2>
-                <p>Register your interest to receive exclusive details and project updates.</p>
-                <div class="divider"></div>
+        <div class="container">
+            <div class="contact-wrapper scroll-reveal">
+                <div class="contact-info">
+                    <h2>Ready to Experience Luxury?</h2>
+                    <p class="lead">Schedule your exclusive site visit today and discover why Shapoorji 9 Arcs is the
+                        most sought-after address in Santacruz.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@shapoorji9arcs.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Santacruz West, Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h3>Get In Touch</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Interested In</option>
+                                <option value="2bhk">2 BHK Residence</option>
+                                <option value="3bhk">3 BHK Residence</option>
+                                <option value="jodi">2 BHK Jodi</option>
+                                <option value="all">All Options</option>
+                            </select>
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Request Callback
+                        </button>
+                        <p classform-note">Our representative will contact you within 24 hours</p>
+                    </form>
+                </div>
             </div>
-            <form id="contact-form" class="fade-on-scroll">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message / Interest</label>
-                    <textarea id="message" name="message" rows="4" placeholder="I am interested in..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Notify Me</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>This website is for informational purposes only. Details and specifications are subject to change without prior notice</p>
+        <div class="container footer-simple">
+            <p>&copy; 2024 Shapoorji 9 Arcs. All rights reserved.</p>
+            <p class="footer-disclaimer">
+                This website is for informational purposes only. Details and specifications are subject to change
+                without prior notice.
+                Images are for representation purpose only.
+            </p>
         </div>
     </footer>
+
+    <!-- Compact Modal Popup -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content compact-modal">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-header">
+                <div class="modal-badge">
+                    <i class="fas fa-star"></i> Exclusive Offer
+                </div>
+                <h3>Book Your Visit</h3>
+                <p>Fill this form for exclusive site visit and special launch offers</p>
+            </div>
+
+            <form id="modal-contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Apartment Type</option>
+                        <option value="2bhk">2 BHK (680-829 sq.ft)</option>
+                        <option value="3bhk">3 BHK (1090-1340 sq.ft)</option>
+                        <option value="jodi">2 BHK Jodi (1650 sq.ft)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="Additional Requirements (Optional)" rows="2"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-calendar-check"></i> Schedule Visit
+                </button>
+
+                <p class="modal-note">
+                    <i class="fas fa-shield-alt"></i> Your information is secure & confidential
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top" class="back-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="main.js"></script>
 </body>
