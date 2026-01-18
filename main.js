@@ -14,6 +14,15 @@ window.addEventListener('load', function () {
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileCloseBtn = document.querySelector('.mobile-close-btn');
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
 hamburger.addEventListener('click', function () {
     this.classList.toggle('active');
