@@ -15,11 +15,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Menu Toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+// Mobile Menu Functionality Update
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+// Close mobile menu when clicking on close button
+mobileMenuClose.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
 });
 
 // Close mobile menu when clicking on a link
@@ -31,6 +34,14 @@ mobileNavLinks.forEach(link => {
     });
 });
 
+// Also add escape key to close mobile menu
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 // Smooth scroll for nav links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -76,6 +87,36 @@ form.addEventListener('submit', (e) => {
     // Show success message
     alert('Thank you for your interest! We will contact you shortly.');
     form.reset();
+});
+// Hamburger Menu Toggle
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+// Update other close functions
+mobileMenuClose.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    );
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
 
 // Hero image lazy loading
